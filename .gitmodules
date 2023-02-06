@@ -1,0 +1,3 @@
+[submodule "dash_app/SmartHomeProcessMining"]
+	path = dash_app/SmartHomeProcessMining
+	url = https://github.com/FelixMarschall/SmartHomeProcessMining.git
