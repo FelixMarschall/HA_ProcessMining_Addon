@@ -18,3 +18,4 @@ options:
 schema:
   message: "str?"
 image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
+webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
