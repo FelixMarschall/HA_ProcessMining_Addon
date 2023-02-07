@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: Example Home Assistant add-on repository
-url: 'https://github.com/home-assistant/addons-example'
-maintainer: Awesome Maintainer <awesome@example.com>
+name: Process Management, Home Assistant add-on repository
+url: "https://github.com/FelixMarschall/HA_ProcessMining_Addon"
+maintainer: Felix Marschall <felix.marschall@student.kit.edu>
