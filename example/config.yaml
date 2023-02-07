@@ -1,8 +1,8 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: Example add-on
-version: "1.2.0"
+name: Process Management
+version: "0.0.1"
 slug: example
-description: Example add-on
+description: Brings Process Management techniques into your smart home!
 url: "https://github.com/home-assistant/addons-example/tree/main/example"
 arch:
   - armhf
