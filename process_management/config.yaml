@@ -17,4 +17,4 @@ options:
   message: "Hello world..."
 schema:
   message: "str?"
-image: "ghcr.io/home-assistant/process-management-{arch}-addon"
+image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
