@@ -12,6 +12,9 @@ RUN \
   apk add --no-cache \
     python3
 
+# init submodule
+RUN git submodule update --init --recursive
+
 WORKDIR /data
 # Copy root filesystem
 # COPY rootfs /
@@ -24,4 +27,4 @@ COPY app/SmartHomeProcessMining /
 # RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
-#RUN pip install -r requirements.txt
+RUN pip install -r requirements.txt
