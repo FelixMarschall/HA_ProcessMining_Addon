@@ -2,6 +2,8 @@
 
 Brings process management techniques as process mining into smart homes and helps to idenify processes in different timespans.
 
+# Requirements
+
 # Installation
 
 _Example add-on to use as a blueprint for new add-ons._
