@@ -12,6 +12,8 @@ RUN \
   apk add --no-cache \
     python3
 
+RUN apk add git
+
 # init submodule
 RUN git submodule update --init --recursive
 
