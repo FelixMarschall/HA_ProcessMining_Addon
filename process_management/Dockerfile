@@ -13,7 +13,9 @@ RUN \
   apk add --no-cache \
   python3 \
   graphviz \
-  xdg-utils
+  xdg-utils \
+  libxml2-dev \
+  libxslt
 
 RUN apk update
 RUN apk add make automake gcc g++ subversion python3-dev
