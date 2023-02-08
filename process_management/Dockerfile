@@ -5,17 +5,18 @@ FROM $BUILD_FROM
 # Execute during the build of the image
 ARG TEMPIO_VERSION BUILD_ARCH
 RUN \
-    curl -sSLf -o /usr/bin/tempio \
-    "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
+  curl -sSLf -o /usr/bin/tempio \
+  "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
 RUN \
   apk add --no-cache \
-    python3
+  python3
 
-RUN apk add git
+#RUN apk add git
+RUN apk add graphviz
 
 # init submodule
-RUN git submodule update --init --recursive
+# RUN git submodule update --init --recursive
 
 WORKDIR /data
 # Copy root filesystem

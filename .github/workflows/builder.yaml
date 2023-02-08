@@ -27,6 +27,13 @@ jobs:
         id: changed_files
         uses: jitterbit/get-changed-files@v1
 
+      # Update references
+      - name: Git Sumbodule Update
+        id: update_submodules
+        run: |
+          git pull --recurse-submodules
+          git submodule update --remote --recursive
+
       - name: Find add-on directories
         id: addons
         uses: home-assistant/actions/helpers/find-addons@master
