@@ -11,8 +11,6 @@ RUN \
 RUN \
   apk add --no-cache \
     python3
-    graphviz
-    xdg-utils
 
 WORKDIR /data
 # Copy root filesystem
