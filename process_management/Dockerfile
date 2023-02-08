@@ -22,7 +22,6 @@ WORKDIR /data
 # Copy root filesystem
 # COPY rootfs /
 
-
 # Copy App filesystem
 COPY app /
 
