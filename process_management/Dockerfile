@@ -20,8 +20,8 @@ RUN apk add graphviz
 
 WORKDIR /data
 # Copy root filesystem
+# COPY rootfs /
 
-COPY rootfs /
 
 # Copy App filesystem
 COPY app /
