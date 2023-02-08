@@ -17,10 +17,7 @@ RUN \
 RUN apk update
 RUN apk add make automake gcc g++ subversion python3-dev
 
-
 WORKDIR /app_data
-# Copy root filesystem
-# COPY rootfs /
 
 # Copy App filesystem
 COPY app/SmartHomeProcessMining /app_data/
