@@ -18,16 +18,13 @@ RUN apk add graphviz
 # init submodule
 # RUN git submodule update --init --recursive
 
-RUN ls -la
-
 WORKDIR /data
 # Copy root filesystem
-# COPY rootfs /
 
-RUN ls -la
+COPY rootfs /
 
 # Copy App filesystem
-COPY app/SmartHomeProcessMining /
+COPY app /
 
 # Install python/pip
 # ENV PYTHONUNBUFFERED=1
