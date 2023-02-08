@@ -22,17 +22,12 @@ jobs:
     steps:
       - name: Check out the repository
         uses: actions/checkout@v3.3.0
+        with:
+          submodules: recursive
 
       - name: Get changed files
         id: changed_files
         uses: jitterbit/get-changed-files@v1
-
-      # Update references
-      - name: Git Submodule Update
-        id: update_submodules
-        run: |
-          git pull --recurse-submodules
-          git submodule update --remote --recursive
 
       - name: Find add-on directories
         id: addons
@@ -76,19 +71,14 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v3.3.0
+        with:
+          submodules: recursive
 
       - name: Get information
         id: info
         uses: home-assistant/actions/helpers/info@master
         with:
           path: "./${{ matrix.addon }}"
-
-      # Update references
-      - name: Git Submodule Update
-        id: update_submodules
-        run: |
-          git pull --recurse-submodules
-          git submodule update --remote --recursive
 
       - name: Check if add-on should be built
         id: check
