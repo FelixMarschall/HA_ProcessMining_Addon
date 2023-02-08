@@ -10,10 +10,12 @@ RUN \
 
 RUN \
   apk add --no-cache \
-  python3
+  python3 \
+  graphviz \
+  xdg-utils
 
-#RUN apk add git
-RUN apk add graphviz
+RUN apk update
+RUN apk add make automake gcc g++ subversion python3-dev
 
 # init submodule
 # RUN git submodule update --init --recursive
@@ -26,5 +28,8 @@ WORKDIR /app_data
 COPY app/SmartHomeProcessMining /app_data/
 
 RUN python3 -m ensurepip
+
+
+
 RUN pip3 install --no-cache --upgrade pip setuptools
 #RUN pip install -r requirements.txt
