@@ -15,7 +15,8 @@ RUN \
   graphviz \
   xdg-utils \
   libxml2-dev \
-  libxslt
+  libxslt \
+  gfortran
 
 RUN apk update
 RUN apk add make automake gcc g++ subversion python3-dev
