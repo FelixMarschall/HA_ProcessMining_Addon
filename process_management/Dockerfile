@@ -17,7 +17,10 @@ RUN \
   graphviz \
   xdg-utils \
   libxml2-dev \
-  libxslt
+  libxslt \
+  libopenblas-dev \
+  pkg-config \
+  libopenblas64-dev
 
 
 RUN apk update
