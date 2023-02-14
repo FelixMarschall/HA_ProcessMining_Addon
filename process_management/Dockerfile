@@ -12,6 +12,7 @@ FROM $BUILD_FROM
 RUN \
   apk add --no-cache \
   gfortran \
+  cmake \
   python3 \
   graphviz \
   xdg-utils \
