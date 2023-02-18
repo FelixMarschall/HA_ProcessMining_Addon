@@ -19,10 +19,10 @@ RUN \
   libxml2-dev \
   libxslt \
   libopenblas-dev \
-  pkg-config \
+  pkg-config
 
 
-  RUN apk update
+RUN apk update
 RUN apk add make automake gcc g++ subversion python3-dev
 
 WORKDIR /app_data
