@@ -20,10 +20,9 @@ RUN \
   libxslt \
   libopenblas-dev \
   pkg-config \
-  libopenblas64-dev
 
 
-RUN apk update
+  RUN apk update
 RUN apk add make automake gcc g++ subversion python3-dev
 
 WORKDIR /app_data
