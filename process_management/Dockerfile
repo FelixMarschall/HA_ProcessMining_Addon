@@ -32,6 +32,6 @@ COPY app/SmartHomeProcessMining /app_data/
 RUN python3 -m ensurepip
 
 RUN pip3 install --no-cache --upgrade pip setuptools==58.2.0
-RUN pip install .
+# RUN pip install .
 # RUN pip install -r requierements.txt
 
