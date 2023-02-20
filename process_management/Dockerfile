@@ -1,6 +1,12 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.4
-# hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
+ARG BUILD_FROM
+FROM $BUILD_FROM
+
+# Execute during the build of the image
+ARG TEMPIO_VERSION BUILD_ARCH
+RUN \
+    curl -sSLf -o /usr/bin/tempio \
+    "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
 # Environment variables
 ENV \
