@@ -3,10 +3,10 @@ ARG BUILD_FROM
 FROM $BUILD_FROM
 
 # Execute during the build of the image
-#ARG TEMPIO_VERSION BUILD_ARCH
-#RUN \
-# curl -sSLf -o /usr/bin/tempio \
-#"https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
+ARG TEMPIO_VERSION BUILD_ARCH
+RUN \
+  curl -sSLf -o /usr/bin/tempio \
+  "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
 # Install system dependencies
 RUN \
@@ -14,6 +14,7 @@ RUN \
   gfortran \
   cmake \
   python3 \
+  py3-scipy \
   graphviz \
   xdg-utils \
   libxml2-dev \
@@ -30,6 +31,6 @@ COPY app/SmartHomeProcessMining /app_data/
 
 RUN python3 -m ensurepip
 
-RUN pip3 install --no-cache --upgrade pip setuptools
-RUN pip install .
+RUN pip3 install --no-cache --upgrade pip setuptools==58.2.0
+RUN pip install -r requierements.txt
 
