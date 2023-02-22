@@ -15,10 +15,12 @@ RUN \
   cmake \
   python3 \
   py3-scipy \
+  python3-numpy \
   graphviz \
   xdg-utils \
   libxml2-dev \
-  libxslt
+  libxslt \
+  libatlas-base-dev
 
 
 RUN apk update
