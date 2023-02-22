@@ -20,7 +20,7 @@ RUN \
   xdg-utils \
   libxml2-dev \
   libxslt \
-  libatlas-base-dev
+  openblas-dev
 
 
 RUN apk update
