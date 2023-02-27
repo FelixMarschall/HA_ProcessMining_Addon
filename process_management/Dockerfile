@@ -12,10 +12,16 @@ RUN \
 RUN \
   apk add --no-cache \
   gfortran \
+  g++ \
+  gcc \
+  automake \
+  subversion \
+  make \
   cmake \
-  python3 \
+  python3-dev \
   py3-scipy \
   py3-numpy \
+  py3-pandas \
   graphviz \
   xdg-utils \
   libxml2-dev \
@@ -24,7 +30,6 @@ RUN \
 
 
 RUN apk update
-RUN apk add make automake gcc g++ subversion python3-dev
 
 WORKDIR /app_data
 
