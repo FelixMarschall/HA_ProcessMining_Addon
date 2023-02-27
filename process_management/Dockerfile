@@ -1,46 +1,81 @@
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 ARG BUILD_FROM
-FROM $BUILD_FROM
+# amd64: debian:${VERSION}-slim
+# i386: i386/debian:${VERSION}-slim
+# aarch64: arm64v8/debian:${VERSION}-slim
+# armv7: arm32v7/debian:${VERSION}-slim
+# armhf: arm32v5/debian:${VERSION}-slim
 
-# Execute during the build of the image
-ARG TEMPIO_VERSION BUILD_ARCH
+FROM ${BUILD_FROM}
+
+# Default ENV
+ENV \
+    LANG="C.UTF-8" \
+    DEBIAN_FRONTEND="noninteractive" \
+    CURL_CA_BUNDLE="/etc/ssl/certs/ca-certificates.crt" \
+    S6_BEHAVIOUR_IF_STAGE2_FAILS=2 \
+    S6_CMD_WAIT_FOR_SERVICES_MAXTIME=0 \
+    S6_CMD_WAIT_FOR_SERVICES=1 \
+    S6_SERVICES_READYTIME=50
+
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+# Build Args
+ARG \
+    BASHIO_VERSION \
+    TEMPIO_VERSION \
+    S6_OVERLAY_VERSION \
+    QEMU_CPU
+
+# Base system
+WORKDIR /usr/src
+ARG BUILD_ARCH
+
 RUN \
-  curl -sSLf -o /usr/bin/tempio \
-  "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
+    set -x \
+    && apt-get update && apt-get install -y --no-install-recommends \
+        bash \
+        jq \
+        tzdata \
+        curl \
+        ca-certificates \
+        xz-utils \
+    && mkdir -p /usr/share/man/man1 \
+    \
+    && if [ "${BUILD_ARCH}" = "armv7" ]; then \
+            export S6_ARCH="arm"; \
+        elif [ "${BUILD_ARCH}" = "i386" ]; then \
+            export S6_ARCH="i686"; \
+        elif [ "${BUILD_ARCH}" = "amd64" ]; then \
+            export S6_ARCH="x86_64"; \
+        else \
+            export S6_ARCH="${BUILD_ARCH}"; \
+        fi \
+    \
+    && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-${S6_ARCH}.tar.xz" \
+        | tar Jxvf - -C / \
+    && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-noarch.tar.xz" \
+        | tar Jxvf - -C / \
+    && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-arch.tar.xz" \
+        | tar Jxvf - -C / \
+    && curl -L -f -s "https://github.com/just-containers/s6-overlay/releases/download/v${S6_OVERLAY_VERSION}/s6-overlay-symlinks-noarch.tar.xz" \
+        | tar Jxvf - -C / \
+    && mkdir -p /etc/fix-attrs.d \
+    && mkdir -p /etc/services.d \
+    \
+    && curl -L -f -s -o /usr/bin/tempio \
+        "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}" \
+    && chmod a+x /usr/bin/tempio \
+    \
+    && mkdir -p /usr/src/bashio \
+    && curl -L -f -s "https://github.com/hassio-addons/bashio/archive/v${BASHIO_VERSION}.tar.gz" \
+        | tar -xzf - --strip 1 -C /usr/src/bashio \
+    && mv /usr/src/bashio/lib /usr/lib/bashio \
+    && ln -s /usr/lib/bashio/bashio /usr/bin/bashio \
+    \
+    && rm -rf /var/lib/apt/lists/* \
+    && rm -rf /usr/src/*
 
-# Install system dependencies
-RUN \
-  apk add --no-cache \
-  gfortran \
-  make \
-  automake \
-  gcc \
-  g++ \
-  subversion \
-  cmake \
-  python3-dev \
-  py3-scipy \
-  py3-numpy \
-  py3-pandas \
-  graphviz \
-  xdg-utils \
-  libxml2-dev \
-  libxslt \
-  openblas-dev \
-  lapack
-
-
-RUN apk update
-# RUN apk add make automake gcc g++ subversion
-
-WORKDIR /app_data
-
-# Copy App filesystem
-COPY app/SmartHomeProcessMining /app_data/
-
-RUN python3 -m ensurepip
-
-RUN pip3 install --no-cache --upgrade pip setuptools==58.2.0
-# RUN pip install .
-# RUN pip install -r requierements.txt
-
+# S6-Overlay
+WORKDIR /
+ENTRYPOINT ["/init"]
