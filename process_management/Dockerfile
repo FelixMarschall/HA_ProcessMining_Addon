@@ -12,11 +12,6 @@ RUN \
 RUN \
   apk add --no-cache \
   gfortran \
-  g++ \
-  gcc \
-  automake \
-  subversion \
-  make \
   cmake \
   python3-dev \
   py3-scipy \
@@ -30,6 +25,7 @@ RUN \
 
 
 RUN apk update
+RUN apk add make automake gcc g++ subversion
 
 WORKDIR /app_data
 
