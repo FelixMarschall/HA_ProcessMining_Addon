@@ -21,7 +21,8 @@ RUN \
   xdg-utils \
   libxml2-dev \
   libxslt \
-  openblas-dev
+  openblas-dev \
+  lapack
 
 
 RUN apk update
