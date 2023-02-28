@@ -29,6 +29,7 @@ WORKDIR /app_data
 
 # Copy App filesystem
 COPY app/SmartHomeProcessMining /app_data/
+COPY run.sh /app_data/
 
 RUN pip install -r requirements.txt
 
