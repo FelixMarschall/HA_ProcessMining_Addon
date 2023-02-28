@@ -30,7 +30,8 @@ WORKDIR /app_data
 # Copy App filesystem
 COPY app/SmartHomeProcessMining /app_data/
 
-RUN pip install -r requierements.txt
+RUN pip install -r requirements.txt
 
+# Start app
 RUN chmod a+x /run.sh
 CMD [ "/run.sh" ]
