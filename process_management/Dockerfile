@@ -19,6 +19,7 @@ RUN apt-get install \
   graphviz \
   libblas-dev \
   liblapack-dev \
+  libumfpack5 \
   -y
 
 
