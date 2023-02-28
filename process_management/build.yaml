@@ -1,17 +1,14 @@
-image: homeassistant/{arch}-base-debian
-shadow_repository: ghcr.io/home-assistant
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 build_from:
-  aarch64: "arm64v8/debian:"
-  armv7: "arm32v7/debian:"
-  armhf: "arm32v5/debian:"
-  amd64: "debian:"
-  i386: "i386/debian:"
-codenotary:
-  signer: notary@home-assistant.io
-args:
-  BASHIO_VERSION: 0.14.3
-  TEMPIO_VERSION: 2021.09.0
-  S6_OVERLAY_VERSION: 3.1.3.0
+  aarch64: "ghcr.io/home-assistant/aarch64-base-ubuntu:20.04"
+  amd64: "ghcr.io/home-assistant/amd64-base-ubuntu:20.04"
+  # armhf: "ghcr.io/home-assistant/armhf-base-ubuntu:20.04"
+  armv7: "ghcr.io/home-assistant/armv7-base-ubuntu:20.04"
+  i386: "ghcr.io/home-assistant/i386-base-ubuntu:18.04"
 labels:
-  io.hass.base.name: debian
-  org.opencontainers.image.source: https://github.com/home-assistant/docker-base
+  org.opencontainers.image.title: "Home Assistant Add-on: Example add-on"
+  org.opencontainers.image.description: "Example add-on to use as a blueprint for new add-ons."
+  org.opencontainers.image.source: "https://github.com/home-assistant/addons-example"
+  org.opencontainers.image.licenses: "Apache License 2.0"
+args:
+  TEMPIO_VERSION: "2021.09.0"

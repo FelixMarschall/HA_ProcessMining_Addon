@@ -5,7 +5,7 @@ slug: example
 description: Brings Process Management techniques into your smart home!
 url: "https://github.com/FelixMarschall/HA_ProcessMining_Addon"
 arch:
-  - armhf
+  #- armhf
   - armv7
   - aarch64
   - amd64
