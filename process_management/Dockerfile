@@ -30,13 +30,14 @@ RUN \
 # lapack
 
 
-RUN apt update && apt upgrade
+RUN apt update -y && apt upgrade -y
 
 RUN apt-get install \
   python3-pip \
   python3-numpy \
   python3-pandas \
-  graphviz
+  graphviz \
+  -y
 
 # RUN apk add make automake gcc g++ subversion
 
