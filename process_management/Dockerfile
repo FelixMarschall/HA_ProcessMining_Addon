@@ -16,9 +16,6 @@ RUN apt update && apt upgrade -y
 RUN apt-get install \
   python3 \
   python3-pip \
-  python3-numpy \
-  python3-pandas \
-  python3-scipy \
   graphviz \
   libblas-dev \
   liblapack-dev \
