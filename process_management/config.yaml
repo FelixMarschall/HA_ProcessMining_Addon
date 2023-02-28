@@ -1,16 +1,17 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Process Management
 version: "1.0.0"
-slug: example
+slug: processmanagement
 description: Brings Process Management techniques into your smart home!
 url: "https://github.com/FelixMarschall/HA_ProcessMining_Addon"
 arch:
   #- armhf
   #- armv7
-  - aarch64
+  #- aarch64
   - amd64
   #- i386
 init: false
+startup: before
 map:
   - share:rw
 options:
@@ -23,4 +24,3 @@ ports:
   8050/tcp: 8050
 panel_title: "Process Management"
 panel_icon: "mdi:graph"
-apparmor: false
