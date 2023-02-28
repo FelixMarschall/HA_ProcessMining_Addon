@@ -5,13 +5,12 @@ slug: processmanagement
 description: Brings Process Management techniques into your smart home!
 url: "https://github.com/FelixMarschall/HA_ProcessMining_Addon"
 arch:
+  - amd64
   #- armhf
   #- armv7
   #- aarch64
-  - amd64
   #- i386
 init: false
-startup: before
 map:
   - share:rw
 options:
