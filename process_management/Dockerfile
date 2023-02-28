@@ -11,10 +11,10 @@ RUN \
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN apt update -y && apt upgrade -y
+RUN apt update && apt upgrade -y
 
 RUN apt-get install \
-  python3.10 \
+  python3 \
   python3-pip \
   python3-numpy \
   python3-pandas \
@@ -24,7 +24,6 @@ RUN apt-get install \
   liblapack-dev \
   -y
 
-# RUN apk add make automake gcc g++ subversion
 
 WORKDIR /app_data
 
@@ -33,7 +32,6 @@ COPY app/SmartHomeProcessMining /app_data/
 
 #RUN python3 -m ensurepip
 
-# RUN pip3 install --no-cache --upgrade pip setuptools==58.2.0
 RUN pip install .
 # RUN pip install -r requierements.txt
 
