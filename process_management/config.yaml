@@ -23,3 +23,4 @@ ports:
   8050/tcp: 8050
 panel_title: "Process Management"
 panel_icon: "mdi:graph"
+#apparmor: false
