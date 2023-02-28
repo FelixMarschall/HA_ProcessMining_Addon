@@ -8,6 +8,9 @@ RUN \
   curl -sSLf -o /usr/bin/tempio \
   "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 RUN apt update -y && apt upgrade -y
 
 RUN apt-get install \
