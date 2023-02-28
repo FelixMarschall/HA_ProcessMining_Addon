@@ -8,31 +8,10 @@ RUN \
   curl -sSLf -o /usr/bin/tempio \
   "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
-# Install system dependencies
-#RUN \
-#apk add --no-cache \
-# gfortran \
-# make \
-# automake \
-# gcc \
-# g++ \
-# subversion \
-# cmake \
-# python3-dev \
-# py3-scipy \
-# py3-numpy \
-# py3-pandas \
-# graphviz \
-# xdg-utils \
-# libxml2-dev \
-# libxslt \
-# openblas-dev \
-# lapack
-
-
 RUN apt update -y && apt upgrade -y
 
 RUN apt-get install \
+  python3.10 \
   python3-pip \
   python3-numpy \
   python3-pandas \
