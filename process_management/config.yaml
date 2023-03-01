@@ -11,6 +11,9 @@ arch:
   #- aarch64
   #- i386
 init: false
+homeassistant_api: true
+hassio_role: manager
+auth_api: true
 ports:
   8050/tcp: 8050
 ports_description:
