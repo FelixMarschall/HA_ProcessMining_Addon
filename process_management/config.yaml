@@ -13,6 +13,7 @@ arch:
 init: false
 map:
   - share:rw
+  - ssl
 options:
   message: "Hello world..."
 schema:
