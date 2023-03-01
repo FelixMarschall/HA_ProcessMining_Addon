@@ -11,14 +11,15 @@ arch:
   #- aarch64
   #- i386
 init: false
+boot: "auto"
+ports:
+  8050/tcp: 8050
+ports_description:
+  8050/tcp: Web interface
 map:
   - share:rw
   - config:rw
   - ssl
 image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
 webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
-ports:
-  8050/tcp: 8050
-ports_description:
-  8050/tcp: Web interface
 panel_icon: "mdi:graph"
