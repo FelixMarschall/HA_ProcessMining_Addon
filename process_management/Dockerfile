@@ -5,25 +5,32 @@ FROM $BUILD_FROM
 # Execute during the build of the image
 ARG TEMPIO_VERSION BUILD_ARCH
 RUN \
-    curl -sSLf -o /usr/bin/tempio \
-    "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
+  curl -sSLf -o /usr/bin/tempio \
+  "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
-RUN \
-  apk add --no-cache \
-    python3
-    graphviz
-    xdg-utils
+# Set shell
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-WORKDIR /data
-# Copy root filesystem
-# COPY rootfs /
+RUN apt update && apt upgrade -y
+
+RUN apt-get install \
+  python3 \
+  python3-pip \
+  graphviz \
+  libblas-dev \
+  liblapack-dev \
+  libumfpack5 \
+  -y
+
+
+WORKDIR /app_data
 
 # Copy App filesystem
-COPY app /
+COPY run.sh /app_data/
+COPY app/SmartHomeProcessMining /app_data/
 
-# Install python/pip
-# ENV PYTHONUNBUFFERED=1
-# RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip install -r requirements.txt
+
+# Start app
+RUN chmod a+x ./run.sh
+CMD [ "./run.sh" ]

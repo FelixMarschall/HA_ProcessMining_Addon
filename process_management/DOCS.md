@@ -1,8 +1,8 @@
-# Home Assistant Add-on: Example add-on
+# Process Management meets Home Assistant!
 
 ## How to use
 
-This add-on really does nothing. It is just an example.
+Visit the web UI to do start mining your own process logs.
 
 When started it will print the configured message or "Hello world" in the log.
 

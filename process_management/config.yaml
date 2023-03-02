@@ -1,20 +1,27 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Process Management
 version: "1.0.0"
-slug: example
+slug: processmanagement
 description: Brings Process Management techniques into your smart home!
 url: "https://github.com/FelixMarschall/HA_ProcessMining_Addon"
 arch:
-  - armhf
-  - armv7
-  - aarch64
   - amd64
-  - i386
+  #- aarch64
+  #- armhf
+  #- armv7
+  #- i386
 init: false
+homeassistant_api: true
+hassio_role: manager
+auth_api: true
+ports:
+  8050/tcp: 8050
+ports_description:
+  8050/tcp: Web interface
 map:
   - share:rw
-options:
-  message: "Hello world..."
-schema:
-  message: "str?"
-image: "ghcr.io/home-assistant/process-management-{arch}-addon"
+  - config:rw
+  - ssl
+image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
+webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
+panel_icon: "mdi:graph"
