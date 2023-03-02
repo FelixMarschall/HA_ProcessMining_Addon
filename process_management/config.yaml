@@ -6,9 +6,9 @@ description: Brings Process Management techniques into your smart home!
 url: "https://github.com/FelixMarschall/HA_ProcessMining_Addon"
 arch:
   - amd64
+  - aarch64
   #- armhf
   #- armv7
-  #- aarch64
   #- i386
 init: false
 homeassistant_api: true
