@@ -24,4 +24,6 @@ map:
   - ssl
 image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
 webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
-panel_icon: "mdi:graph"
+panel_icon: mdi:graph
+environment:
+  - SUPERVISOR_TOKEN
