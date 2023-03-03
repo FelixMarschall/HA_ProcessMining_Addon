@@ -4,9 +4,18 @@ Brings process management techniques as process mining into smart homes and help
 
 # Requirements
 
+- Computer with amd64 processor
+- Homeassistant OS or Supervised installation, otherwise you can't run Addons.
+
 # Installation
 
-_Example add-on to use as a blueprint for new add-ons._
+1. Go to 'Settings' -> 'Addons' -> 'Add new Addon'
+2. Click the three dots in the top right corner
+3. Add repository: https://github.com/FelixMarschall/HA_ProcessMining_Addon/tree/main/process_management
+4. Refresh add-ons
+5. Find this addon at the end and click install.
+
+This can need some time depending on your internet connection and computer speed.
 
 ![Supports amd64 Architecture][amd64-shield]
 
