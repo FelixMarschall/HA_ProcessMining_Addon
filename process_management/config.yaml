@@ -13,6 +13,7 @@ arch:
 init: false
 homeassistant_api: true
 hassio_api: true
+hassio_role: homeassistant
 auth_api: true
 ports:
   8050/tcp: 8050
