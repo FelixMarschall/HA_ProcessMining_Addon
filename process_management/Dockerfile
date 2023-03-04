@@ -24,7 +24,7 @@ RUN apt-get install \
   -y
 
 
-WORKDIR /data
+WORKDIR /app_data
 
 # Copy App filesystem
 COPY run.sh /app_data/
