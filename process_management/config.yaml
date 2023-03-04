@@ -23,10 +23,9 @@ map:
   - share:rw
   - config:rw
   - ssl
-schema:
-  env_vars:
-    - name: match(^GF_([A-Z0-9_])+$)
-      value: str
+environment:
+  - SUPERVISOR_TOKEN=${SUPERVISOR_TOKEN}
+
 image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
 webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
 panel_icon: mdi:graph
