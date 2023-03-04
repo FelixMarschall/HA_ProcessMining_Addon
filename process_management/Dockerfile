@@ -40,13 +40,12 @@ RUN apt-get install \
 WORKDIR /data
 
 # Copy App filesystem
-COPY run.sh /data/
 COPY app/SmartHomeProcessMining /data/
 
 RUN pip install -r requirements.txt
 
 # Copy data for add-on
-COPY run.sh /data
-RUN chmod a+x /run.sh
+COPY run.sh /data/
+RUN chmod a+x /data/run.sh
 
-CMD [ "/run.sh" ]
+CMD [ "/data/run.sh" ]
