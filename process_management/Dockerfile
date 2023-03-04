@@ -40,8 +40,8 @@ RUN apt-get install \
 WORKDIR /data
 
 # Copy App filesystem
-COPY run.sh /app_data/
-COPY app/SmartHomeProcessMining /app_data/
+COPY run.sh /data/
+COPY app/SmartHomeProcessMining /data/
 
 RUN pip install -r requirements.txt
 
