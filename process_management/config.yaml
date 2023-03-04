@@ -28,5 +28,6 @@ webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
 panel_icon: mdi:graph
 panel_title: Process Management
 environment:
-  additionalProperties: { "SUPERVISOR_TOKEN": "${SUPERVISOR_TOKEN}" }
+  additionalProperties:
+    SUPERVISOR_TOKEN": "SUPERVISOR_TOKEN"
   type: object
