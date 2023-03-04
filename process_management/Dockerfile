@@ -24,11 +24,11 @@ RUN apt-get install \
   -y
 
 
-WORKDIR /data
+WORKDIR /app_data
 
 # Copy App filesystem
-COPY run.sh /data/
-COPY app/SmartHomeProcessMining /data/
+COPY run.sh /app_data/
+COPY app/SmartHomeProcessMining /app_data/
 
 RUN pip install -r requirements.txt
 
