@@ -24,7 +24,7 @@ map:
   - config:rw
   - ssl
 environment:
-  - SUPERVISOR_TOKEN=${SUPERVISOR_TOKEN}
+  - SUPERVISOR_TOKEN: ${SUPERVISOR_TOKEN}
 
 image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
 webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
