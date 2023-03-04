@@ -34,4 +34,4 @@ RUN pip install -r requirements.txt
 
 # Start app
 RUN chmod a+x ./run.sh
-CMD [ "/data/run.sh" ]
+CMD [ "./run.sh" ]
