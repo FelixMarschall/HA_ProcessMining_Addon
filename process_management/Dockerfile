@@ -24,14 +24,14 @@ RUN apt-get install \
   -y
 
 
-WORKDIR /app_data
+WORKDIR /data
 
 # Copy App filesystem
-COPY run.sh /app_data/
-COPY app/SmartHomeProcessMining /app_data/
+COPY run.sh /data/
+COPY app/SmartHomeProcessMining /data/
 
 RUN pip install -r requirements.txt
 
 # Start app
 RUN chmod a+x ./run.sh
-CMD [ "./run.sh" ]
+CMD [ "/data/run.sh" ]
