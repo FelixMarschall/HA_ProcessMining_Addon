@@ -5,9 +5,6 @@ FROM $BUILD_FROM
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-
-ENV SUPERVISOR_TOKEN='MAAAN'
-
 # Execute during the build of the image
 ARG TEMPIO_VERSION BUILD_ARCH
 RUN \
