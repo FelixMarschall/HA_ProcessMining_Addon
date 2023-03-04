@@ -11,10 +11,10 @@ arch:
   #- armv7
   #- i386
 init: false
-homeassistant_api: true
 hassio_api: true
 hassio_role: admin
-auth_api: true
+homeassistant_api: true
+host_network: true
 ports:
   8050/tcp: 8050
 ports_description:
@@ -23,6 +23,10 @@ map:
   - share:rw
   - config:rw
   - ssl
+schema:
+  env_vars:
+    - name: match(^GF_([A-Z0-9_])+$)
+      value: str
 image: "ghcr.io/felixmarschall/process-management-{arch}-addon"
 webui: "[PROTO:option_name]://[HOST]:[PORT:8050]"
 panel_icon: mdi:graph
