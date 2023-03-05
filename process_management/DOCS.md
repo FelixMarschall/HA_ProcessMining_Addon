@@ -15,12 +15,11 @@
 4. Refresh add-ons
 5. Find this addon at the end and click install.
 
-## To access Logbook data
+The installatiion can need some time depending on your internet connection and computer.
+
+## Access Logbook data
 - An activation of the supervisor API is necessary to access the homeassistant logbook by API ([documention](https://www.home-assistant.io/integrations/api/)).
 Add in `configuration.yaml` a line with `api:` 
 - Generate and copy a personal long-term access token in your profil settings.
 - Go to the configuration page of this addon.
 - Insert token into `credential_secret` and click save.
-
-
-The installatiion can need some time depending on your internet connection and computer.
