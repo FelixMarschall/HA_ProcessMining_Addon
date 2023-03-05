@@ -15,4 +15,4 @@
 4. Refresh add-ons
 5. Find this addon at the end and click install.
 
-This can need some time depending on your internet connection and computer speed.
+This can need some time depending on your internet connection and computer.
