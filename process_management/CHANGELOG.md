@@ -1,5 +1,10 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.3
+
+- Filter ".update" entities from logbook
+- Stop logbook crashing by adding virtualization
+
 ## 1.0.2
 
 - Bug reduction by optimization of logbook storage
