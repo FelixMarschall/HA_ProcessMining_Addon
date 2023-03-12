@@ -1,5 +1,11 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.4
+
+- Feedback after clicking process mining
+- Feedback for fetching the home assistant logbook
+- Bugfixes & typos
+
 ## 1.0.3
 
 - Filter ".update" entities from logbook
