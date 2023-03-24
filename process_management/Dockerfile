@@ -19,6 +19,7 @@ RUN apt update && apt install -y \
   libblas-dev \
   liblapack-dev \
   libumfpack5
+ && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app_data
 
