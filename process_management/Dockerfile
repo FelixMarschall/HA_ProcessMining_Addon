@@ -18,8 +18,8 @@ RUN apt update && apt install -y \
   graphviz \
   libblas-dev \
   liblapack-dev \
-  libumfpack5
- && rm -rf /var/lib/apt/lists/*
+  libumfpack5 \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app_data
 
