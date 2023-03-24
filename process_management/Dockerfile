@@ -12,17 +12,13 @@ RUN \
   "https://github.com/home-assistant/tempio/releases/download/${TEMPIO_VERSION}/tempio_${BUILD_ARCH}"
 
 
-RUN apt update && apt upgrade -y
-
-RUN apt-get install \
+RUN apt update && apt install -y \
   python3 \
   python3-pip \
   graphviz \
   libblas-dev \
   liblapack-dev \
-  libumfpack5 \
-  -y
-
+  libumfpack5
 
 WORKDIR /app_data
 
