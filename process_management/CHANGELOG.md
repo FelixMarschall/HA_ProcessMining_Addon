@@ -1,5 +1,11 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.6
+
+- Added a directly-follows graph in transformation tab
+- virtualization of data table
+- bugfixes + additional error messages
+
 ## 1.0.5
 
 - Bugfixes
