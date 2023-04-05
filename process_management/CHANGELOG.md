@@ -1,5 +1,11 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.8
+
+- show stats with own uploaded event log
+- export homeassistant data as csv file
+- add link to pre-processing example
+
 ## 1.0.7
 
 - python version upgrade
