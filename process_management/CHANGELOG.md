@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.9
+
+- Bugfix
+
 ## 1.0.8
 
 - show stats with own uploaded event log
