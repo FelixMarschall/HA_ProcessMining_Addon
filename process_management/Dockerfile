@@ -19,7 +19,7 @@ RUN apt update && apt install -y \
   libblas-dev \
   liblapack-dev \
   libumfpack5 \
-  software-properties-common \
+  #software-properties-common \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app_data

@@ -1,5 +1,10 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.0.10
+
+- rm week, month stats
+- Bugfixes
+
 ## 1.0.9
 
 - Bugfix
