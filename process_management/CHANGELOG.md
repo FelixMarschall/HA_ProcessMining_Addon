@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.1.0
+
+- bugfix (heuristics and alpha miner)
+
 ## 1.0.10
 
 - rm week, month stats
