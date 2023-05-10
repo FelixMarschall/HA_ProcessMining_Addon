@@ -1,5 +1,13 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.2.0 Full pipline available
+
+- jupyter notbook is no longer needed
+- filter for logbook fetching
+- choose column for process
+- chosen parameters won't flush after reloading or page change
+- colapse directly-follows graph
+
 ## 1.1.0
 
 - bugfix (heuristics and alpha miner)
