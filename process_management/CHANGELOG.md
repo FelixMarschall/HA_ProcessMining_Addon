@@ -1,5 +1,11 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.2.1
+
+- Filter home assistant entities
+- Dash app delivered by WSGI Server
+- Bugfixes & recommendations
+
 ## 1.2.0 Full pipline available
 
 - jupyter notbook is no longer needed
