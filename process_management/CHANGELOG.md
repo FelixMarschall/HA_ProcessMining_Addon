@@ -1,14 +1,18 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.2.2
+
+- additional logbook entities selection buttons
+
 ## 1.2.1
 
 - Filter home assistant entities
 - Dash app delivered by WSGI Server
 - Bugfixes & recommendations
 
-## 1.2.0 Full pipline available
+## 1.2.0 Full pipeline available
 
-- jupyter notbook is no longer needed
+- Jupyter notbook is no longer needed to mine on home assistant data
 - filter for logbook fetching
 - choose column for process
 - chosen parameters won't flush after reloading or page change

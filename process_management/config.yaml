@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: Process Management
-version: "1.2.1"
+version: "1.2.2"
 slug: processmanagement
 description: Brings Process Management techniques into your smart home!
 url: "https://github.com/FelixMarschall/HA_ProcessMining_Addon"
