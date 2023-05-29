@@ -1,5 +1,9 @@
 <!-- https://developers.home-assistant.io/docs/add-ons/presentation#keeping-a-changelog -->
 
+## 1.2.3
+
+- sorted logbook entity list
+
 ## 1.2.2
 
 - additional logbook entities selection buttons
